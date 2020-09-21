@@ -10,7 +10,15 @@
 
     <body>
         <h1>Todo</h1>
-        <button>click me</button>
+        <input id="search-todo-input" placeholder="Search Todos"><br><br>
+        <form id="form">
+            <input id="add-todo-input" name="addTodo" placeholder="Add Todo">
+            <button id="add-todo-button">Add Item to Todo</button>
+        </form>
+        <label>
+            <input type="checkbox" id="hide-completed"> Hide Completed
+        </label>
+        <div id="todo-item-list"></div>
         <script src="script.js"></script>
     </body>
 </html>
