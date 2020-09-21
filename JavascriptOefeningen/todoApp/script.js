@@ -22,9 +22,8 @@ const filters = {
 
 const renderTodos = function(todos, filters) {
     const filteredTodos = todos.filter(function(todo) {
-        if (filters.hideCompleted === true) {
-            return (todo.text.toLowerCase().includes(filters.searchText.toLowerCase()) &&
-                    todo.completed === false)
+        if (filters.hideCompleted) {
+            return (todo.text.toLowerCase().includes(filters.searchText.toLowerCase()) && !todo.completed)
         } else {
             return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
         }
@@ -53,7 +52,7 @@ const renderTodos = function(todos, filters) {
 const addTodo = function(text, status) {
     todoList.push({
         text: text,
-        status: status
+        completed: status
     })
 }
 
